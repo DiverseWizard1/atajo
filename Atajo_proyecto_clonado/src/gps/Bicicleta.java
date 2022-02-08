@@ -13,26 +13,24 @@ public class Bicicleta {
         String marca = "Orbea";
     }
     
+    public static int calcularRuta(int [] vector){
+    
+        int suma = 0;
+        
+        for(int i = 0; i < vector.length; i++){
+        
+            suma += vector[i];
+        
+        }
+    
+        return suma;
+    }
+    
     public static String rutaCorta(int [] camino1, int [] camino2, int [] camino3)
     {
-        int sum1 = 0;
-        int sum2 = 0;
-        int sum3 = 0;
-        
-        for(int i=0; i<camino1.length; i++)
-        {
-            sum1 += camino1[i];
-        }
-        
-        for(int i=0; i<camino2.length; i++)
-        {
-            sum2 += camino2[i];
-        }
-        
-        for(int i=0; i<camino3.length; i++)
-        {
-            sum3 += camino3[i];
-        }
+        int sum1 = calcularRuta(camino1);
+        int sum2 = calcularRuta(camino2);
+        int sum3 = calcularRuta(camino3);
         
         if(sum1 < sum2 && sum1 < sum3)
         {
